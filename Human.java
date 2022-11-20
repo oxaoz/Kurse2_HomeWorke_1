@@ -1,10 +1,11 @@
 public class Human {
 
-    int yearOfBirth;
+   private int yearOfBirth;
     String name;
-    String town;
+    private String town;
     String jobTitle;
     String zero = "«Информация не указана»";
+    int currentYear = 2022;
 
 
 
@@ -18,19 +19,38 @@ public class Human {
             this.yearOfBirth = yearOfBirth;
         } else this.yearOfBirth = 0;
 
-        if (name == null || name.isEmpty()) {
+        if (name == null || name.isEmpty() || name.isBlank()) {
             this.name = zero;
         } else this.name = name;
 
-        if (town == null || town.isEmpty()) {
+        if (town == null || town.isEmpty() || name.isBlank()) {
             this.town = zero;
         }else this.town = town;
 
-        if (jobTitle == null || jobTitle.isEmpty()) {
-            this.jobTitle = zero;
+        if (jobTitle == null || jobTitle.isEmpty() || name.isBlank()) {
+            this.jobTitle = "Я нигде не работаю";
         }else this.jobTitle = jobTitle;
         }
 
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+    public void setYearOfBirth(int yearOfBirth) {
+        if (yearOfBirth > 0) {
+            this.yearOfBirth = yearOfBirth;
+        } else this.yearOfBirth = 0;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        if (town == null || town.isEmpty() || town.isBlank()) {
+            this.town = zero;
+        }else this.town = town;
+        this.town = town;
+    }
 
     @Override
     public String toString() {
